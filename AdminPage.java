@@ -273,32 +273,6 @@ public class AdminPage extends JFrame{
 		contentPane.add(TableScrollPane);
 		
 		Reset();
-		/*try {
-			cn=DriverManager.getConnection ("輸入你的資料庫路徑及帳號密碼");
-			st=cn.createStatement();
-			rs=st.executeQuery("SELECT * FROM booklist");
-			while(rs.next()) {
-				String book[]=new String[5];
-				for(int i=1;i<=columnName.length;i++) {
-					if(rs.getString(i).equals("1")) {
-						book[i-1]="可借閱";
-					}
-					else if(rs.getString(i).equals("0")) {
-						book[i-1]="外借中";
-					}
-					else {
-						book[i-1]=rs.getString(i);
-					}
-				}
-				TableModel.addRow(book);
-			}
-			rs.close();
-			st.close();
-			cn.close();
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}*/
 		
 		setVisible(true);	
 	}
