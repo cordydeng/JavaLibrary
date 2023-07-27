@@ -40,11 +40,11 @@ public class RegistPage extends JFrame{
 		setContentPane(contentPane);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100,100,500,400);
-		setTitle("Cordy's Library µù¥Uµe­±");
+		setTitle("Cordy's Library è¨»å†Šç•«é¢");
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
 		
-		homePage=new JButton("¦^­º­¶");
+		homePage=new JButton("å›é¦–é ");
 		homePage.setBounds(10,10,75,20);
 		homePage.addActionListener(new ActionListener() {
 			@Override
@@ -56,7 +56,7 @@ public class RegistPage extends JFrame{
 		});
 		contentPane.add(homePage);
 		
-		AdminRadioButton =new JRadioButton("ºŞ²z­û");
+		AdminRadioButton =new JRadioButton("ç®¡ç†å“¡");
 		AdminRadioButton.setBounds(70,50,70,20);
 		AdminRadioButton.addActionListener(new ActionListener() {
 			@Override
@@ -69,7 +69,7 @@ public class RegistPage extends JFrame{
 		});
 		contentPane.add(AdminRadioButton);
 		
-		FacultyRadioButton =new JRadioButton("±ĞÂ¾­û");
+		FacultyRadioButton =new JRadioButton("æ•™è·å“¡");
 		FacultyRadioButton.setBounds(150,50,70,20);
 		FacultyRadioButton.addActionListener(new ActionListener() {
 			@Override
@@ -83,7 +83,7 @@ public class RegistPage extends JFrame{
 		});
 		contentPane.add(FacultyRadioButton);
 		
-		StudentRadioButton =new JRadioButton("¾Ç¥Í");
+		StudentRadioButton =new JRadioButton("å­¸ç”Ÿ");
 		StudentRadioButton.setBounds(230,50,70,20);
 		StudentRadioButton.addActionListener(new ActionListener() {
 			@Override
@@ -104,7 +104,7 @@ public class RegistPage extends JFrame{
 		group.add(StudentRadioButton);
 		
 		
-		UserNameLabel=new JLabel("¥Î¤á¦W");
+		UserNameLabel=new JLabel("ç”¨æˆ¶å");
 		UserNameLabel.setBounds(100,80,50,20);
 		contentPane.add(UserNameLabel);
 		
@@ -113,7 +113,7 @@ public class RegistPage extends JFrame{
 		UserNameTextField.setColumns(20);
 		contentPane.add(UserNameTextField);
 		
-		AccountNumberLabel=new JLabel(" ±b¸¹");
+		AccountNumberLabel=new JLabel(" å¸³è™Ÿ");
 		AccountNumberLabel.setBounds(100,130,50,20);
 		contentPane.add(AccountNumberLabel);
 		
@@ -122,7 +122,7 @@ public class RegistPage extends JFrame{
 		AccountNumberTextField.setColumns(20);
 		contentPane.add(AccountNumberTextField);
 		
-		PasswordLabel=new JLabel(" ±K½X");
+		PasswordLabel=new JLabel(" å¯†ç¢¼");
 		PasswordLabel.setBounds(100,180,50,20);
 		contentPane.add(PasswordLabel);
 		
@@ -132,7 +132,7 @@ public class RegistPage extends JFrame{
 		PasswordTextField.setEchoChar('*');
 		contentPane.add(PasswordTextField);
 		
-		showPassword=new JCheckBox("Åã¥Ü±K½X");
+		showPassword=new JCheckBox("é¡¯ç¤ºå¯†ç¢¼");
 		showPassword.setBounds(250,180,75,20);
 		showPassword.addActionListener(new ActionListener() {
 			@Override
@@ -148,7 +148,7 @@ public class RegistPage extends JFrame{
 		});
 		contentPane.add(showPassword);
 		
-		SecondPasswordLabel=new JLabel("½T»{±K½X");
+		SecondPasswordLabel=new JLabel("ç¢ºèªå¯†ç¢¼");
 		SecondPasswordLabel.setBounds(90,220, 50,20);
 		contentPane.add(SecondPasswordLabel);
 		
@@ -158,7 +158,7 @@ public class RegistPage extends JFrame{
 		SecondPasswordTextField.setColumns(20);
 		contentPane.add(SecondPasswordTextField);
 		
-		showSecondPassword=new JCheckBox("Åã¥Ü±K½X");
+		showSecondPassword=new JCheckBox("é¡¯ç¤ºå¯†ç¢¼");
 		showSecondPassword.setBounds(250,220,75,20);
 		showSecondPassword.addActionListener(new ActionListener() {
 			@Override
@@ -174,7 +174,7 @@ public class RegistPage extends JFrame{
 		});
 		contentPane.add(showSecondPassword);
 		
-		AdminCodeLabel=new JLabel("ºŞ²z­ûª÷Æ_");
+		AdminCodeLabel=new JLabel("ç®¡ç†å“¡é‡‘é‘°");
 		AdminCodeLabel.setBounds(100,250,75,20);
 		contentPane.add(AdminCodeLabel);
 		
@@ -185,7 +185,7 @@ public class RegistPage extends JFrame{
 		AdminCodeField.setEditable(false);
 		contentPane.add(AdminCodeField);
 		
-		showAdminCode=new JCheckBox("Åã¥Üª÷Æ_");
+		showAdminCode=new JCheckBox("é¡¯ç¤ºé‡‘é‘°");
 		showAdminCode.setBounds(235,250,75,20);
 		showAdminCode.addActionListener(new ActionListener() {
 			@Override
@@ -198,11 +198,11 @@ public class RegistPage extends JFrame{
 		});
 		contentPane.add(showAdminCode);
 		
-		checkBox=new JCheckBox("¤w¸Ô¾\±b¤á³Ğ«Ø¤§³W«h");
+		checkBox=new JCheckBox("å·²è©³é–±å¸³æˆ¶å‰µå»ºä¹‹è¦å‰‡");
 		checkBox.setBounds(100,280,150,20);
 		contentPane.add(checkBox);
 		
-		Regist=new JButton("µù¥U");
+		Regist=new JButton("è¨»å†Š");
 		Regist.setBounds(160,310,75,20);
 		Regist.addActionListener(new ActionListener(){
 			@Override
@@ -221,9 +221,9 @@ public class RegistPage extends JFrame{
 											if(!(AdminCode.equals(""))) {
 												if(AdminCode.equals("0000")) {
 													if(checkBox.isSelected()) {
-														//³Ğ«Ø±b¤á
+														//å‰µå»ºå¸³æˆ¶
 														try {
-															cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+															cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 															stmt=cn.createStatement();
 															UserName=UserNameTextField.getText();
 															AccountNumber=AccountNumberTextField.getText();
@@ -233,30 +233,30 @@ public class RegistPage extends JFrame{
 															stmt.execute(sql);
 															stmt.close();
 															cn.close();
-															JOptionPane.showMessageDialog(null,"µù¥U¦¨¥\","´£¿ô",1);
+															JOptionPane.showMessageDialog(null,"è¨»å†ŠæˆåŠŸ","æé†’",1);
 														} 
 														catch (SQLException e1) {
-															System.out.println("¸ê®Æ®w³s±µ¥¢±Ñ\n" + e1.getMessage());
+															System.out.println("è³‡æ–™åº«é€£æ¥å¤±æ•—\n" + e1.getMessage());
 														}
 													}
 													else {
-														JOptionPane.showMessageDialog(null,"½Ğ¤Ä¿ï§Ú¤w¸Ô¾\³W½d","´£¿ô",2);
+														JOptionPane.showMessageDialog(null,"è«‹å‹¾é¸æˆ‘å·²è©³é–±è¦ç¯„","æé†’",2);
 													}
 												}
 												else {
-													JOptionPane.showMessageDialog(null,"ºŞ²z­ûª÷Æ_¿ù»~","´£¿ô",2);
+													JOptionPane.showMessageDialog(null,"ç®¡ç†å“¡é‡‘é‘°éŒ¯èª¤","æé†’",2);
 													AdminCodeField.setText("");
 												}
 											}
 											else {
-												JOptionPane.showMessageDialog(null,"ºŞ²z­ûª÷Æ_¤£¯à¯dªÅ","´£¿ô",2);
+												JOptionPane.showMessageDialog(null,"ç®¡ç†å“¡é‡‘é‘°ä¸èƒ½ç•™ç©º","æé†’",2);
 											}
 										}
 										else {
 											if(checkBox.isSelected()) {
-												//³Ğ«Ø±b¤á
+												//å‰µå»ºå¸³æˆ¶
 												try {
-													cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+													cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 													stmt=cn.createStatement();
 													UserName=UserNameTextField.getText();
 													AccountNumber=AccountNumberTextField.getText();
@@ -268,7 +268,7 @@ public class RegistPage extends JFrame{
 													stmt.execute(sql);
 													stmt.close();
 													cn.close();
-													JOptionPane.showMessageDialog(null,"µù¥U¦¨¥\","´£¿ô",1);
+													JOptionPane.showMessageDialog(null,"è¨»å†ŠæˆåŠŸ","æé†’",1);
 													new HomePage();
 													dispose();
 												} 
@@ -279,32 +279,32 @@ public class RegistPage extends JFrame{
 												
 											}
 											else {
-												JOptionPane.showMessageDialog(null,"½Ğ¤Ä¿ï§Ú¤w¸Ô¾\³W½d","´£¿ô",2);
+												JOptionPane.showMessageDialog(null,"è«‹å‹¾é¸æˆ‘å·²è©³é–±è¦ç¯„","æé†’",2);
 											}
 										}
 									}
 									else {
-										JOptionPane.showMessageDialog(null,"±K½X¤£¤@­P","´£¿ô",2);
+										JOptionPane.showMessageDialog(null,"å¯†ç¢¼ä¸ä¸€è‡´","æé†’",2);
 									}
 								}
 								else {
-									JOptionPane.showMessageDialog(null,"½T»{±K½X¤£¯à¯dªÅ","´£¿ô",2);
+									JOptionPane.showMessageDialog(null,"ç¢ºèªå¯†ç¢¼ä¸èƒ½ç•™ç©º","æé†’",2);
 								}
 							}
 							else {
-								JOptionPane.showMessageDialog(null,"±K½X¤£¯à¯dªÅ","´£¿ô",2);
+								JOptionPane.showMessageDialog(null,"å¯†ç¢¼ä¸èƒ½ç•™ç©º","æé†’",2);
 							}
 						}
 						else {
-							JOptionPane.showMessageDialog(null,"±b¸¹¤£¯à¯dªÅ","´£¿ô",2);
+							JOptionPane.showMessageDialog(null,"å¸³è™Ÿä¸èƒ½ç•™ç©º","æé†’",2);
 						}
 					}
 					else {
-						JOptionPane.showMessageDialog(null,"¥Î¤á¦W¤£¯à¯dªÅ","´£¿ô",2);
+						JOptionPane.showMessageDialog(null,"ç”¨æˆ¶åä¸èƒ½ç•™ç©º","æé†’",2);
 					}
 				}
 				else {
-					JOptionPane.showMessageDialog(null,"½Ğ¿ï¨­¤À§O","´£¿ô",2);
+					JOptionPane.showMessageDialog(null,"è«‹é¸èº«åˆ†åˆ¥","æé†’",2);
 				}
 			}
 		});
