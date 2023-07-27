@@ -37,11 +37,11 @@ class HomePage extends JFrame{
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
 		
-		HomePageTitle=new JLabel("Åwªï¨Ó¨ì Cordy's Library");
+		HomePageTitle=new JLabel("æ­¡è¿ä¾†åˆ° Cordy's Library");
 		HomePageTitle.setBounds(170, 20, 200, 20);
 		contentPane.add(HomePageTitle);
 		
-		AccountNumberLabel=new JLabel("±b¸¹");
+		AccountNumberLabel=new JLabel("å¸³è™Ÿ");
 		AccountNumberLabel.setBounds(150, 100, 25, 20);
 		contentPane.add(AccountNumberLabel);
 		
@@ -50,7 +50,7 @@ class HomePage extends JFrame{
 		AccountNumberField.setColumns(20);
 		contentPane.add(AccountNumberField);
 		
-		PasswordLabel=new JLabel("±K½X");
+		PasswordLabel=new JLabel("å¯†ç¢¼");
 		PasswordLabel.setBounds(150, 140, 25, 20);
 		contentPane.add(PasswordLabel);
 		
@@ -78,11 +78,11 @@ class HomePage extends JFrame{
 		});
 		contentPane.add(showPassword);
 		
-		showPasswordLabel=new JLabel("Åã¥Ü±K½X");
+		showPasswordLabel=new JLabel("é¡¯ç¤ºå¯†ç¢¼");
 		showPasswordLabel.setBounds(330, 140, 50, 20);
 		contentPane.add(showPasswordLabel);
 		
-		LogIn=new JButton("µn¤J");
+		LogIn=new JButton("ç™»å…¥");
 		LogIn.setBounds(175,180,60,20);
 		LogIn.addActionListener(new ActionListener() {
 
@@ -94,14 +94,14 @@ class HomePage extends JFrame{
 						AccountNumber=AccountNumberField.getText();
 						Password=String.valueOf(PasswordField.getPassword());
 						if(!(Password.equals(""))) {
-							cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+							cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 							stmt=cn.createStatement();
 							String sql="SELECT * FROM account WHERE AccountNumber = '"+ AccountNumber+"'";
 							//System.out.println(sql);
 							rs=stmt.executeQuery(sql);
 							if(rs.next()) {
 								if(rs.getString(3).equals(Password)){
-									JOptionPane.showMessageDialog(null,"µn¤J¦¨¥\","Cordy's Library",1);
+									JOptionPane.showMessageDialog(null,"ç™»å…¥æˆåŠŸ","Cordy's Library",1);
 									if(rs.getString(4).equals("A")) {
 										new AdminPage();
 										dispose();
@@ -117,19 +117,19 @@ class HomePage extends JFrame{
 								}
 								else {
 									System.out.println(rs.getString(3));
-									JOptionPane.showMessageDialog(null,"±K½X¿ù»~","Cordy's Library",2);
+									JOptionPane.showMessageDialog(null,"å¯†ç¢¼éŒ¯èª¤","Cordy's Library",2);
 								}
 							}
 							else {
-								JOptionPane.showMessageDialog(null,"±b¸¹¤£¦s¦b","Cordy's Library",2);
+								JOptionPane.showMessageDialog(null,"å¸³è™Ÿä¸å­˜åœ¨","Cordy's Library",2);
 							}
 						}
 						else {
-							JOptionPane.showMessageDialog(null,"½Ğ¿é¤J±K½X","µn¤J¥¢±Ñ",2);
+							JOptionPane.showMessageDialog(null,"è«‹è¼¸å…¥å¯†ç¢¼","ç™»å…¥å¤±æ•—",2);
 						}
 					}
 					else {
-						JOptionPane.showMessageDialog(null,"½Ğ¿é¤J±b¸¹","µn¤J¥¢±Ñ",2);
+						JOptionPane.showMessageDialog(null,"è«‹è¼¸å…¥å¸³è™Ÿ","ç™»å…¥å¤±æ•—",2);
 					}
 					
 					
@@ -143,7 +143,7 @@ class HomePage extends JFrame{
 		});
 		contentPane.add(LogIn);
 		
-		Regist=new JButton("µù¥U");
+		Regist=new JButton("è¨»å†Š");
 		Regist.setBounds(250, 180, 60, 20);
 		Regist.addActionListener(new ActionListener() {
 			@Override
@@ -155,7 +155,7 @@ class HomePage extends JFrame{
 		});
 		contentPane.add(Regist);
 		
-		Exit=new JButton("°h¥X");
+		Exit=new JButton("é€€å‡º");
 		Exit.setBounds(10,325,75,20);
 		Exit.addActionListener(new ActionListener() {
 			@Override
