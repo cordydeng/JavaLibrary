@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class ReturnPage extends JFrame{
 	
-	private String columnName[]= {"®Ñ¦W","­É¾\¤é´Á","ÁÙ®Ñ¤é´Á","­É¾\ª¬ºA"};
+	private String columnName[]= {"æ›¸å","å€Ÿé–±æ—¥æœŸ","é‚„æ›¸æ—¥æœŸ","å€Ÿé–±ç‹€æ…‹"};
 	private String BorrowDate;
 	private String BookName;
 	
@@ -24,7 +24,7 @@ public class ReturnPage extends JFrame{
 	public ReturnPage() {
 		
 		contentPane=new JPanel();
-		setTitle("Cordy's Library ÁÙ®Ñ¤¶­±");
+		setTitle("Cordy's Library é‚„æ›¸ä»‹é¢");
 		setBounds(100,100,500,450);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(contentPane);
@@ -37,7 +37,7 @@ public class ReturnPage extends JFrame{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
-				if((BookList.getValueAt(BookList.getSelectedRow(),3).toString().equals("¤wÂkÁÙ"))) {
+				if((BookList.getValueAt(BookList.getSelectedRow(),3).toString().equals("å·²æ­¸é‚„"))) {
 					ReturnBook.setEnabled(false);
 				}
 				else {
@@ -59,24 +59,24 @@ public class ReturnPage extends JFrame{
 		TableScrollPane.setViewportView(BookList);
 		contentPane.add(TableScrollPane);
 		
-		ReturnBook=new JButton("ÁÙ®Ñ");
+		ReturnBook=new JButton("é‚„æ›¸");
 		ReturnBook.setBounds(185,375,100,20);
 		ReturnBook.setEnabled(false);
 		ReturnBook.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				//¦pªG¨S¦³®Ñ¥i¥HÁÙ??
+				//å¦‚æœæ²’æœ‰æ›¸å¯ä»¥é‚„??
 				BorrowDate=(BookList.getValueAt(BookList.getSelectedRow(),1).toString());
 				BookName=(BookList.getValueAt(BookList.getSelectedRow(),0).toString());
 				Return(BorrowDate,BookName);
 				Refresh();
-				JOptionPane.showMessageDialog(null,"ÁÙ®Ñ¦¨¥\","Cordy's Library ÁÙ®Ñ¤¶­±",1);
+				JOptionPane.showMessageDialog(null,"é‚„æ›¸æˆåŠŸ","Cordy's Library é‚„æ›¸ä»‹é¢",1);
 			}
 		});
 		contentPane.add(ReturnBook);
 		
-		Return=new JButton("¦^­º­¶");
+		Return=new JButton("å›é¦–é ");
 		Return.setBounds(10,10,100,20);
 		Return.addActionListener(new ActionListener() {
 			@Override
@@ -96,7 +96,7 @@ public class ReturnPage extends JFrame{
 	
 	void Refresh() {
 		try {
-			cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+			cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 			st=cn.createStatement();
 			rs=st.executeQuery("SELECT * FROM record WHERE Borrower = '"+HomePage.username+"'");
 			TableModel.setRowCount(0);
@@ -106,11 +106,11 @@ public class ReturnPage extends JFrame{
 				book[1]=rs.getString(3).toString();
 				if(rs.getString(4)==null) {
 					book[2]="";
-					book[3]="©|¥¼ÂkÁÙ";
+					book[3]="å°šæœªæ­¸é‚„";
 				}
 				else {
 					book[2]=rs.getString(4).toString();
-					book[3]="¤wÂkÁÙ";
+					book[3]="å·²æ­¸é‚„";
 				}
 				TableModel.addRow(book);
 			}
@@ -125,7 +125,7 @@ public class ReturnPage extends JFrame{
 	
 	void Return(String borrowDate,String bookname) {
 		try {
-			cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+			cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 			st=cn.createStatement();
 			st.execute("UPDATE record SET ReturnDate = now() WHERE BorrowDate = '"+borrowDate+"'");
 			st.execute("UPDATE booklist SET Status = 1 WHERE BookName = '"+bookname+"'");
