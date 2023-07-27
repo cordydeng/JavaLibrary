@@ -30,14 +30,14 @@ public class PersonalProfilePage extends JFrame{
 	public PersonalProfilePage() {
 		
 		contentPane=new JPanel();
-		setTitle("Cordy's Library ­Ó¤H¸ê°T¤¶­±");
+		setTitle("Cordy's Library å€‹äººè³‡è¨Šä»‹é¢");
 		setBounds(100,100,400,350);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
 		setLayout(null);
 		
-		Return=new JButton("¦^­º­¶");
+		Return=new JButton("å›é¦–é ");
 		Return.setBounds(10,10,100,20);
 		Return.addActionListener(new ActionListener() {
 			@Override
@@ -49,7 +49,7 @@ public class PersonalProfilePage extends JFrame{
 		});
 		contentPane.add(Return);
 		
-		UserNameLabel=new JLabel("¥Î¤á¦W");
+		UserNameLabel=new JLabel("ç”¨æˆ¶å");
 		UserNameLabel.setBounds(50,75,50,20);
 		contentPane.add(UserNameLabel);
 		
@@ -59,7 +59,7 @@ public class PersonalProfilePage extends JFrame{
 		UserNameTextField.setText(HomePage.username);
 		contentPane.add(UserNameTextField);
 		
-		AccountNumberLabel=new JLabel(" ±b¸¹");
+		AccountNumberLabel=new JLabel(" å¸³è™Ÿ");
 		AccountNumberLabel.setBounds(50,125,50,20);
 		contentPane.add(AccountNumberLabel);
 		
@@ -69,7 +69,7 @@ public class PersonalProfilePage extends JFrame{
 		AccountNumberTextField.setText(HomePage.accountnumber);
 		contentPane.add(AccountNumberTextField);
 		
-		PasswordLabel=new JLabel(" ±K½X");
+		PasswordLabel=new JLabel(" å¯†ç¢¼");
 		PasswordLabel.setBounds(50,175,50,20);
 		contentPane.add(PasswordLabel);
 		
@@ -80,7 +80,7 @@ public class PersonalProfilePage extends JFrame{
 		PasswordTextField.setText(HomePage.password);
 		contentPane.add(PasswordTextField);
 		
-		showPassword=new JCheckBox("Åã¥Ü±K½X");
+		showPassword=new JCheckBox("é¡¯ç¤ºå¯†ç¢¼");
 		showPassword.setBounds(250,175,75,20);
 		showPassword.addActionListener(new ActionListener() {
 			@Override
@@ -96,7 +96,7 @@ public class PersonalProfilePage extends JFrame{
 		});
 		contentPane.add(showPassword);
 		
-		SecondPasswordLabel=new JLabel("½T»{±K½X");
+		SecondPasswordLabel=new JLabel("ç¢ºèªå¯†ç¢¼");
 		SecondPasswordLabel.setBounds(50,225,50,20);
 		contentPane.add(SecondPasswordLabel);
 		
@@ -107,7 +107,7 @@ public class PersonalProfilePage extends JFrame{
 		SecondPasswordTextField.setText(HomePage.password);
 		contentPane.add(SecondPasswordTextField);
 		
-		showSecondPassword=new JCheckBox("Åã¥Ü±K½X");
+		showSecondPassword=new JCheckBox("é¡¯ç¤ºå¯†ç¢¼");
 		showSecondPassword.setBounds(250,225,75,20);
 		showSecondPassword.addActionListener(new ActionListener() {
 			@Override
@@ -123,7 +123,7 @@ public class PersonalProfilePage extends JFrame{
 		});
 		contentPane.add(showSecondPassword);
 		
-		Revise=new JButton("§ó·s­Ó¤H¸ê°T");
+		Revise=new JButton("æ›´æ–°å€‹äººè³‡è¨Š");
 		Revise.setBounds(100,275,125,20);
 		Revise.addActionListener(new ActionListener() {
 			@Override
@@ -138,28 +138,28 @@ public class PersonalProfilePage extends JFrame{
 										UserName=UserNameTextField.getText();
 										AccountNumber=AccountNumberTextField.getText();
 										Update(UserName,AccountNumber,Password);
-										JOptionPane.showMessageDialog(null,"­Ó¤H¸ê®Æ­×§ï§¹¦¨\n½Ğ­«·sµn¤J","Cordy's Library ­Ó¤H¸ê°T¤¶­±",2);
+										JOptionPane.showMessageDialog(null,"å€‹äººè³‡æ–™ä¿®æ”¹å®Œæˆ\nè«‹é‡æ–°ç™»å…¥","Cordy's Library å€‹äººè³‡è¨Šä»‹é¢",2);
 										new HomePage();
 										dispose();
 									}
 								else {
-									JOptionPane.showMessageDialog(null,"±K½X¤£¤@­P","Cordy's Library ­Ó¤H¸ê°T¤¶­±",2);
+									JOptionPane.showMessageDialog(null,"å¯†ç¢¼ä¸ä¸€è‡´","Cordy's Library å€‹äººè³‡è¨Šä»‹é¢",2);
 								}
 							}
 							else {
-								JOptionPane.showMessageDialog(null,"½T»{±K½X¤£¯à¬°ªÅ","Cordy's Library ­Ó¤H¸ê°T¤¶­±",2);
+								JOptionPane.showMessageDialog(null,"ç¢ºèªå¯†ç¢¼ä¸èƒ½ç‚ºç©º","Cordy's Library å€‹äººè³‡è¨Šä»‹é¢",2);
 							}
 						}
 						else {
-							JOptionPane.showMessageDialog(null,"±K½XÄæ¦ì¤£¯à¬°ªÅ","Cordy's Library ­Ó¤H¸ê°T¤¶­±",2);
+							JOptionPane.showMessageDialog(null,"å¯†ç¢¼æ¬„ä½ä¸èƒ½ç‚ºç©º","Cordy's Library å€‹äººè³‡è¨Šä»‹é¢",2);
 						}
 					}
 					else {
-						JOptionPane.showMessageDialog(null,"±b¸¹Äæ¦ì¤£¯à¬°ªÅ","Cordy's Library ­Ó¤H¸ê°T¤¶­±",2);
+						JOptionPane.showMessageDialog(null,"å¸³è™Ÿæ¬„ä½ä¸èƒ½ç‚ºç©º","Cordy's Library å€‹äººè³‡è¨Šä»‹é¢",2);
 					}
 				}
 				else {
-					JOptionPane.showMessageDialog(null,"¨Ï¥ÎªÌ¦WºÙ¤£¯à¬°ªÅ","Cordy's Library ­Ó¤H¸ê°T¤¶­±",2);
+					JOptionPane.showMessageDialog(null,"ä½¿ç”¨è€…åç¨±ä¸èƒ½ç‚ºç©º","Cordy's Library å€‹äººè³‡è¨Šä»‹é¢",2);
 				}
 			}
 		});
@@ -171,7 +171,7 @@ public class PersonalProfilePage extends JFrame{
 	//UPDATE account SET UserName = '22' , AccountNumber='22' , Password='22' , Identity='F' WHERE AccountNumber='2'
 	void Update(String username,String accountNumber,String password){
 		try {
-			cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+			cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 			st=cn.createStatement();
 			st.execute("UPDATE account SET UserName='"+UserName+"' , AccountNumber='"+AccountNumber+"' , Password='"+Password+"' WHERE AccountNumber='"+HomePage.accountnumber+"'");
 			st.execute("UPDATE record SET Borrower='"+UserName+"' WHERE Borrower= '"+HomePage.username+"'");
