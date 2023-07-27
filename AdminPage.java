@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class AdminPage extends JFrame{
 	
-	private String columnName[]= {"®Ñ¦W","ISBN½X","§@ªÌ","¥Xª©ªÀ","­É¾\ª¬ºA"};
+	private String columnName[]= {"æ›¸å","ISBNç¢¼","ä½œè€…","å‡ºç‰ˆç¤¾","å€Ÿé–±ç‹€æ…‹"};
 	private String BookName;
 	private String ISBN;
 	private String Author;
@@ -39,11 +39,11 @@ public class AdminPage extends JFrame{
 		setContentPane(contentPane);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100,100,800,600);
-		setTitle("Cordy's Library ºŞ²z­û¤¶­±");
+		setTitle("Cordy's Library ç®¡ç†å“¡ä»‹é¢");
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
 		
-		BookNameLabel=new JLabel("®Ñ¦W");
+		BookNameLabel=new JLabel("æ›¸å");
 		BookNameLabel.setBounds(50,75,50,20);
 		contentPane.add(BookNameLabel);
 		
@@ -52,7 +52,7 @@ public class AdminPage extends JFrame{
 		BookNameTextField.setColumns(30);
 		contentPane.add(BookNameTextField);
 		
-		ISBNLabel=new JLabel("ISBN½X");
+		ISBNLabel=new JLabel("ISBNç¢¼");
 		ISBNLabel.setBounds(50,150,50,20);
 		contentPane.add(ISBNLabel);
 		
@@ -61,7 +61,7 @@ public class AdminPage extends JFrame{
 		ISBNTextField.setColumns(100);
 		contentPane.add(ISBNTextField);
 		
-		AuthorLabel=new JLabel("§@ªÌ");
+		AuthorLabel=new JLabel("ä½œè€…");
 		AuthorLabel.setBounds(50,225,50,20);
 		contentPane.add(AuthorLabel);
 		
@@ -70,7 +70,7 @@ public class AdminPage extends JFrame{
 		AuthorTextField.setColumns(30);
 		contentPane.add(AuthorTextField);
 		
-		PublisherLabel=new JLabel("¥Xª©ªÀ");
+		PublisherLabel=new JLabel("å‡ºç‰ˆç¤¾");
 		PublisherLabel.setBounds(50,300,50,20);
 		contentPane.add(PublisherLabel);
 		
@@ -79,7 +79,7 @@ public class AdminPage extends JFrame{
 		PublisherTextField.setColumns(30);
 		contentPane.add(PublisherTextField);
 		
-		AddBook=new JButton("·s¼W®ÑÄy");
+		AddBook=new JButton("æ–°å¢æ›¸ç±");
 		AddBook.setBounds(30,350,90,20);
 		AddBook.addActionListener(new ActionListener() {
 			@Override
@@ -90,13 +90,13 @@ public class AdminPage extends JFrame{
 						if(!(AuthorTextField.getText().equals(""))) {
 							if(!(PublisherTextField.getText().equals(""))) {
 								try {
-									cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+									cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 									st=cn.createStatement();
 									ISBN=ISBNTextField.getText();
 									sql="SELECT * FROM booklist WHERE ISBN = '"+ ISBN+"'";
 									rs=st.executeQuery(sql);
 									if(rs.next()) {
-										JOptionPane.showMessageDialog(null,"ISBN½X­«½Æ","·s¼W®ÑÄy¥¢±Ñ",2);
+										JOptionPane.showMessageDialog(null,"ISBNç¢¼é‡è¤‡","æ–°å¢æ›¸ç±å¤±æ•—",2);
 									}
 									else {
 										BookName=BookNameTextField.getText();
@@ -104,7 +104,7 @@ public class AdminPage extends JFrame{
 										Publisher=PublisherTextField.getText();
 										sql="INSERT INTO booklist (BookName, ISBN, Author, Publisher, Status) VALUES ('"+BookName+"' , "+"'"+ISBN+"' , "+"'"+Author+"' , "+"' "+Publisher+"', '1 ' )";
 										st.execute(sql);
-										JOptionPane.showMessageDialog(null,"·s¼W§¹¦¨","·s¼W®ÑÄy¦¨¥\",1);
+										JOptionPane.showMessageDialog(null,"æ–°å¢å®Œæˆ","æ–°å¢æ›¸ç±æˆåŠŸ",1);
 										Reset();
 									}
 									rs.close();
@@ -120,36 +120,36 @@ public class AdminPage extends JFrame{
 								}
 							}
 							else {
-								JOptionPane.showMessageDialog(null,"¥Xª©ªÀÄæ¦ì¤£¯à¯dªÅ","·s¼W®ÑÄy¥¢±Ñ",2);
+								JOptionPane.showMessageDialog(null,"å‡ºç‰ˆç¤¾æ¬„ä½ä¸èƒ½ç•™ç©º","æ–°å¢æ›¸ç±å¤±æ•—",2);
 							}
 						}
 						else {
-							JOptionPane.showMessageDialog(null,"§@ªÌÄæ¦ì¤£¯à¯dªÅ","·s¼W®ÑÄy¥¢±Ñ",2);
+							JOptionPane.showMessageDialog(null,"ä½œè€…æ¬„ä½ä¸èƒ½ç•™ç©º","æ–°å¢æ›¸ç±å¤±æ•—",2);
 						}
 					}
 					else {
-						JOptionPane.showMessageDialog(null,"ISBN½XÄæ¦ì¤£¯àªÅ¥Õ","·s¼W®ÑÄy¥¢±Ñ",2);
+						JOptionPane.showMessageDialog(null,"ISBNç¢¼æ¬„ä½ä¸èƒ½ç©ºç™½","æ–°å¢æ›¸ç±å¤±æ•—",2);
 					}
 				}
 				else {
-					JOptionPane.showMessageDialog(null,"®Ñ¦WÄæ¦ì¤£¯àªÅ¥Õ","·s¼W®ÑÄy¥¢±Ñ",2);
+					JOptionPane.showMessageDialog(null,"æ›¸åæ¬„ä½ä¸èƒ½ç©ºç™½","æ–°å¢æ›¸ç±å¤±æ•—",2);
 				}
 			}
 		});
 		contentPane.add(AddBook);
 		
-		DeleteBook=new JButton("§R°£®ÑÄy");
+		DeleteBook=new JButton("åˆªé™¤æ›¸ç±");
 		DeleteBook.setBounds(130,350,90,20);
 		DeleteBook.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				if(BookNameTextField.getText().equals("")|| ISBNTextField.getText().equals("")|| AuthorTextField.getText().equals("")|| PublisherTextField.getText().equals("")) {
-					JOptionPane.showMessageDialog(null,"Äæ¦ì¤£¯à¯dªÅ","§R°£®ÑÄy¥¢±Ñ",2);
+					JOptionPane.showMessageDialog(null,"æ¬„ä½ä¸èƒ½ç•™ç©º","åˆªé™¤æ›¸ç±å¤±æ•—",2);
 				}
 				else {
 					try {
-						cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+						cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 						st=cn.createStatement();
 						ISBN=ISBNTextField.getText();
 						sql="SELECT * FROM booklist WHERE ISBN = '"+ ISBN+"'";
@@ -157,11 +157,11 @@ public class AdminPage extends JFrame{
 						if(rs.next()) {
 							sql="DELETE FROM booklist WHERE ISBN = '"+ ISBN+"'";
 							st.execute(sql);
-							JOptionPane.showMessageDialog(null,"§R°£§¹¦¨","§R°£®ÑÄy¦¨¥\",1);
+							JOptionPane.showMessageDialog(null,"åˆªé™¤å®Œæˆ","åˆªé™¤æ›¸ç±æˆåŠŸ",1);
 							Reset();
 						}
 						else {
-							JOptionPane.showMessageDialog(null,"¨S¦³±ı§R°£ªº®ÑÄy","§R°£®ÑÄy¥¢±Ñ",2);
+							JOptionPane.showMessageDialog(null,"æ²’æœ‰æ¬²åˆªé™¤çš„æ›¸ç±","åˆªé™¤æ›¸ç±å¤±æ•—",2);
 						}
 						st.close();
 						cn.close();
@@ -178,25 +178,25 @@ public class AdminPage extends JFrame{
 		});
 		contentPane.add(DeleteBook);
 		
-		ReviseBook=new JButton("­×§ï®ÑÄy");
+		ReviseBook=new JButton("ä¿®æ”¹æ›¸ç±");
 		ReviseBook.setBounds(230,350,90,20);
 		ReviseBook.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				if(BookNameTextField.getText().equals("")|| ISBNTextField.getText().equals("")|| AuthorTextField.getText().equals("")|| PublisherTextField.getText().equals("")) {
-					JOptionPane.showMessageDialog(null,"Äæ¦ì¤£¯à¯dªÅ","­×§ï®ÑÄy¥¢±Ñ",2);
+					JOptionPane.showMessageDialog(null,"æ¬„ä½ä¸èƒ½ç•™ç©º","ä¿®æ”¹æ›¸ç±å¤±æ•—",2);
 				}
 				else {
 					try {
-						cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+						cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 						st=cn.createStatement();
 						sql="SELECT * FROM booklist WHERE ISBN = '"+ ISBN+"'";
 						rs=st.executeQuery(sql);
 						if(rs.next()) {
 							String isbn=ISBNTextField.getText();
 							if(!(isbn.equals(ISBN))) {
-								JOptionPane.showMessageDialog(null,"ISBN½X¤£¯à­×§ï","­×§ï®ÑÄy¥¢±Ñ",2);
+								JOptionPane.showMessageDialog(null,"ISBNç¢¼ä¸èƒ½ä¿®æ”¹","ä¿®æ”¹æ›¸ç±å¤±æ•—",2);
 							}
 							else {
 								BookName=BookNameTextField.getText();
@@ -204,11 +204,11 @@ public class AdminPage extends JFrame{
 								Publisher=PublisherTextField.getText();
 								sql="UPDATE booklist SET BookName = '"+BookName+"', Author = '"+Author+"', Publisher = '"+Publisher+"' WHERE ISBN = '"+ISBN+"'";
 								st.execute(sql);
-								JOptionPane.showMessageDialog(null,"­×§ï§¹¦¨","­×§ï®ÑÄy¦¨¥\",1);
+								JOptionPane.showMessageDialog(null,"ä¿®æ”¹å®Œæˆ","ä¿®æ”¹æ›¸ç±æˆåŠŸ",1);
 							}
 						}
 						else {
-							JOptionPane.showMessageDialog(null,"¨S¦³±ı­×§ïªº®ÑÄy","­×§ï®ÑÄy¥¢±Ñ",2);
+							JOptionPane.showMessageDialog(null,"æ²’æœ‰æ¬²ä¿®æ”¹çš„æ›¸ç±","ä¿®æ”¹æ›¸ç±å¤±æ•—",2);
 						}
 						st.close();
 						cn.close();
@@ -226,7 +226,7 @@ public class AdminPage extends JFrame{
 		});
 		contentPane.add(ReviseBook);
 		
-		LogOut=new JButton("µn¥X");
+		LogOut=new JButton("ç™»å‡º");
 		LogOut.setBounds(10,540,75,20);
 		LogOut.addActionListener(new ActionListener() {
 			@Override
@@ -247,7 +247,7 @@ public class AdminPage extends JFrame{
 			        ISBNTextField.setText((BookList.getValueAt(BookList.getSelectedRow(),1)).toString());
 			        AuthorTextField.setText((BookList.getValueAt(BookList.getSelectedRow(),2)).toString());
 			        PublisherTextField.setText((BookList.getValueAt(BookList.getSelectedRow(),3)).toString());
-			        if((BookList.getValueAt(BookList.getSelectedRow(),4)).toString().equals("¥~­É¤¤")) {
+			        if((BookList.getValueAt(BookList.getSelectedRow(),4)).toString().equals("å¤–å€Ÿä¸­")) {
 			        	DeleteBook.setEnabled(false);
 			        	ReviseBook.setEnabled(false);
 			        }
@@ -274,17 +274,17 @@ public class AdminPage extends JFrame{
 		
 		Reset();
 		/*try {
-			cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+			cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 			st=cn.createStatement();
 			rs=st.executeQuery("SELECT * FROM booklist");
 			while(rs.next()) {
 				String book[]=new String[5];
 				for(int i=1;i<=columnName.length;i++) {
 					if(rs.getString(i).equals("1")) {
-						book[i-1]="¥i­É¾\";
+						book[i-1]="å¯å€Ÿé–±";
 					}
 					else if(rs.getString(i).equals("0")) {
-						book[i-1]="¥~­É¤¤";
+						book[i-1]="å¤–å€Ÿä¸­";
 					}
 					else {
 						book[i-1]=rs.getString(i);
@@ -306,17 +306,17 @@ public class AdminPage extends JFrame{
 	void Reset() {
 		TableModel.setRowCount(0);
 		try {
-			cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+			cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 			st=cn.createStatement();
 			rs=st.executeQuery("SELECT * FROM booklist");
 			while(rs.next()) {
 				String book[]=new String[5];
 				for(int i=1;i<=columnName.length;i++) {
 					if(rs.getString(i).equals("1")) {
-						book[i-1]="¥i­É¾\";
+						book[i-1]="å¯å€Ÿé–±";
 					}
 					else if(rs.getString(i).equals("0")) {
-						book[i-1]="¥~­É¤¤";
+						book[i-1]="å¤–å€Ÿä¸­";
 					}
 					else {
 						book[i-1]=rs.getString(i);
