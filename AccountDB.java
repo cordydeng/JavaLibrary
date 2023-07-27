@@ -8,19 +8,19 @@ public class AccountDB {
         }
         catch(ClassNotFoundException ce)
         {
-     	   System.out.println("JDBC¨S¦³ÅX°Êµ{¦¡" + ce.getMessage());
+     	   System.out.println("JDBCæ²’æœ‰é©…å‹•ç¨‹å¼" + ce.getMessage());
      	   return ;
         }
         try
         {
-     	   Connection cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
-     	   System.out.println("¸ê®Æ®w³s±µ¦¨¥\");
+     	   Connection cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
+     	   System.out.println("è³‡æ–™åº«é€£æ¥æˆåŠŸ");
            cn.close();
-           System.out.println("ÄÀ©ñ»P¸ê®Æ®wªº³s½u");
+           System.out.println("é‡‹æ”¾èˆ‡è³‡æ–™åº«çš„é€£ç·š");
         }
         catch(SQLException e)
         {
-     	   System.out.println("¸ê®Æ®w³s±µ¥¢±Ñ\n" + e.getMessage());
+     	   System.out.println("è³‡æ–™åº«é€£æ¥å¤±æ•—\n" + e.getMessage());
         }
 	}
 }
