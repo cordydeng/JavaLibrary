@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class BorrowBookPage extends JFrame{
 	
-	private String columnName[]= {"®Ñ¦W","ISBN½X","§@ªÌ","¥Xª©ªÀ","­É¾\ª¬ºA"};
+	private String columnName[]= {"æ›¸å","ISBNç¢¼","ä½œè€…","å‡ºç‰ˆç¤¾","å€Ÿé–±ç‹€æ…‹"};
 	private String BookName;
 	private String ISBN;
 	private String Author;
@@ -40,11 +40,11 @@ public class BorrowBookPage extends JFrame{
 		setContentPane(contentPane);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100,100,800,600);
-		setTitle("Cordy's Library ­É®Ñ¤¶­±");
+		setTitle("Cordy's Library å€Ÿæ›¸ä»‹é¢");
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
 		
-		SearchbyBookName=new JRadioButton("·j´M®Ñ¦W");
+		SearchbyBookName=new JRadioButton("æœå°‹æ›¸å");
 		SearchbyBookName.setBounds(50,75,75,20);
 		contentPane.add(SearchbyBookName);
 		
@@ -52,7 +52,7 @@ public class BorrowBookPage extends JFrame{
 		BookNameTextField.setBounds(150,75,100,20);
 		contentPane.add(BookNameTextField);
 		
-		SearchbyISBN=new JRadioButton("·j´MISBN½X");
+		SearchbyISBN=new JRadioButton("æœå°‹ISBNç¢¼");
 		SearchbyISBN.setBounds(50,125,100,20);
 		contentPane.add(SearchbyISBN);
 		
@@ -60,7 +60,7 @@ public class BorrowBookPage extends JFrame{
 		ISBNTextField.setBounds(150,125,100,20);
 		contentPane.add(ISBNTextField);
 		
-		SearchbyAuthor=new JRadioButton("·j´M§@ªÌ");
+		SearchbyAuthor=new JRadioButton("æœå°‹ä½œè€…");
 		SearchbyAuthor.setBounds(50,175,75,20);
 		contentPane.add(SearchbyAuthor);
 		
@@ -68,7 +68,7 @@ public class BorrowBookPage extends JFrame{
 		AuthorTextField.setBounds(150,175,100,20);
 		contentPane.add(AuthorTextField);
 		
-		SearchbyPublisher=new JRadioButton("·j´M¥Xª©ªÀ");
+		SearchbyPublisher=new JRadioButton("æœå°‹å‡ºç‰ˆç¤¾");
 		SearchbyPublisher.setBounds(50,225,100,20);
 		contentPane.add(SearchbyPublisher);
 		
@@ -82,7 +82,7 @@ public class BorrowBookPage extends JFrame{
 		group.add(SearchbyAuthor);
 		group.add(SearchbyPublisher);
 		
-		Search=new JButton("·j´M");
+		Search=new JButton("æœå°‹");
 		Search.setBounds(110,275,75,20);
 		Search.addActionListener(new ActionListener() {
 			@Override
@@ -107,7 +107,7 @@ public class BorrowBookPage extends JFrame{
 					searchWord=PublisherTextField.getText();
 				}
 				if(searchItem.equals("")||searchWord.equals("")) {
-					JOptionPane.showMessageDialog(null,"·j´M¥¢±Ñ","¿ù»~°T®§",2);
+					JOptionPane.showMessageDialog(null,"æœå°‹å¤±æ•—","éŒ¯èª¤è¨Šæ¯",2);
 				}
 				else {
 					Search(searchItem,searchWord);
@@ -116,7 +116,7 @@ public class BorrowBookPage extends JFrame{
 		});
 		contentPane.add(Search);
 		
-		ShowAllBook=new JButton("¥ş³¡®ÑÄy");
+		ShowAllBook=new JButton("å…¨éƒ¨æ›¸ç±");
 		ShowAllBook.setBounds(520,530,100,20);
 		ShowAllBook.addActionListener(new ActionListener() {
 			@Override
@@ -127,19 +127,19 @@ public class BorrowBookPage extends JFrame{
 		});
 		contentPane.add(ShowAllBook);
 		
-		BorrowBook=new JButton("§Ú­n­É®Ñ");
+		BorrowBook=new JButton("æˆ‘è¦å€Ÿæ›¸");
 		BorrowBook.setBounds(95,400,100,20);
 		BorrowBook.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				Borrow();
-				JOptionPane.showMessageDialog(null,"­É¾\¦¨¥\","­É¾\¦¨¥\³qª¾",1);
+				JOptionPane.showMessageDialog(null,"å€Ÿé–±æˆåŠŸ","å€Ÿé–±æˆåŠŸé€šçŸ¥",1);
 			}
 		});
 		contentPane.add(BorrowBook);
 		
-		Return=new JButton("¤W¤@­¶");
+		Return=new JButton("ä¸Šä¸€é ");
 		Return.setBounds(50,500,75,20);
 		Return.addActionListener(new ActionListener() {
 			@Override
@@ -157,7 +157,7 @@ public class BorrowBookPage extends JFrame{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
-				if((BookList.getValueAt(BookList.getSelectedRow(),4).toString().equals("¥~­É¤¤"))) {
+				if((BookList.getValueAt(BookList.getSelectedRow(),4).toString().equals("å¤–å€Ÿä¸­"))) {
 					BorrowBook.setEnabled(false);
 				}
 				else {
@@ -185,7 +185,7 @@ public class BorrowBookPage extends JFrame{
 	
 	void Search(String item,String word) {
 		try {
-			cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+			cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 			st=cn.createStatement();
 			sql="SELECT * FROM booklist WHERE INSTR ( "+item+", '"+word+"')";
 			rs=st.executeQuery(sql);
@@ -195,10 +195,10 @@ public class BorrowBookPage extends JFrame{
 					String book[]=new String[5];
 					for(int i=1;i<=columnName.length;i++) {
 						if(rs.getString(i).equals("1")) {
-							book[i-1]="¥i­É¾\";
+							book[i-1]="å¯å€Ÿé–±";
 						}
 						else if(rs.getString(i).equals("0")) {
-							book[i-1]="¥~­É¤¤";
+							book[i-1]="å¤–å€Ÿä¸­";
 						}
 						else {
 							book[i-1]=rs.getString(i);
@@ -215,7 +215,7 @@ public class BorrowBookPage extends JFrame{
 				PublisherTextField.setText("");
 			}
 			else {
-				JOptionPane.showMessageDialog(null,"¬dµL¦¹®Ñ","·j´M¥¢±Ñ",2);
+				JOptionPane.showMessageDialog(null,"æŸ¥ç„¡æ­¤æ›¸","æœå°‹å¤±æ•—",2);
 				Refresh();
 			}
 		} catch (SQLException e1) {
@@ -226,7 +226,7 @@ public class BorrowBookPage extends JFrame{
 	
 	void Refresh() {
 		try {
-			cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+			cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 			st=cn.createStatement();
 			rs=st.executeQuery("SELECT * FROM booklist");
 			TableModel.setRowCount(0);
@@ -234,10 +234,10 @@ public class BorrowBookPage extends JFrame{
 				String book[]=new String[5];
 				for(int i=1;i<=columnName.length;i++) {
 					if(rs.getString(i).equals("1")) {
-						book[i-1]="¥i­É¾\";
+						book[i-1]="å¯å€Ÿé–±";
 					}
 					else if(rs.getString(i).equals("0")) {
-						book[i-1]="¥~­É¤¤";
+						book[i-1]="å¤–å€Ÿä¸­";
 					}
 					else {
 						book[i-1]=rs.getString(i);
@@ -260,7 +260,7 @@ public class BorrowBookPage extends JFrame{
 	
 	void Borrow() {
 		try {
-			cn=DriverManager.getConnection ("jdbc:mysql://localhost/library","javauser","advjava2022");
+			cn=DriverManager.getConnection ("è¼¸å…¥ä½ çš„è³‡æ–™åº«è·¯å¾‘åŠå¸³è™Ÿå¯†ç¢¼");
 			st=cn.createStatement();
 			sql="INSERT INTO record ( BookName, Borrower, BorrowDate ) VALUES ( '"+BookList.getValueAt(BookList.getSelectedRow(),0).toString()+"', '"+HomePage.username+"' , now() )";
 			st.execute(sql);
