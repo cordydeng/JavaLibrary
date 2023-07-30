@@ -8,20 +8,22 @@
 
 以下是各個檔案的解說
 
-StartClass.java : 用來開啟圖書館首頁
+  AccountDB.java : 此檔案僅用於連接資料庫測試時使用，對於整支程式的運作不會有任何影響
 
-HomePage.java : 圖書館首頁，有退出按鈕可以關閉整支程式
+  StartClass.java : 用來開啟圖書館首頁
 
-RegisterPage.java : 註冊畫面
+  HomePage.java : 圖書館首頁，有退出按鈕可以關閉整支程式
 
-UserPage.java : 一般使用者的UI介面，先從此頁點選需要的功能後就會跳轉到相關介面
+  RegisterPage.java : 註冊畫面
 
-AdminPage : 圖書管理員的使用者介面，可以新增、刪除、修改書籍資訊
+  UserPage.java : 一般使用者的UI介面，先從此頁點選需要的功能後就會跳轉到相關介面
 
-BorrowBookPage.java : 使用者點選"借書"按鈕後會跳轉到此介面，提供查詢書籍及借書的功能
+  AdminPage : 圖書管理員的使用者介面，可以新增、刪除、修改書籍資訊
 
-ReturnPage.java : 使用者點選"還書及借閱紀錄"按鈕會跳轉到此介面，此介面可以看到過往的借閱紀錄及可以進行還書的動作
+  BorrowBookPage.java : 使用者點選"借書"按鈕後會跳轉到此介面，提供查詢書籍及借書的功能
 
-PersonProfilePage.java : 使用者點選"個人資料"按鈕後會跳轉到此頁面，使用者可以在此介面修改個人資料
+  ReturnPage.java : 使用者點選"還書及借閱紀錄"按鈕會跳轉到此介面，此介面可以看到過往的借閱紀錄及可以進行還書的動作
 
-library.sql : 此SQL檔提供了圖書館系統所使用的資料庫結構，內含少許資料供測試使用，也可以自由新增所需資料
+  PersonProfilePage.java : 使用者點選"個人資料"按鈕後會跳轉到此頁面，使用者可以在此介面修改個人資料
+
+  library.sql : 此SQL檔提供了圖書館系統所使用的資料庫結構，內含少許資料供測試使用，也可以自由新增所需資料
